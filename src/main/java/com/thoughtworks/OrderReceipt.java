@@ -25,7 +25,7 @@ public class OrderReceipt {
 
         // prints lineItems
         double totalSalesTax = 0d;
-        double totalAmount = 0d;
+        double totalAmountWithTax = 0d;
         for (LineItem lineItem : order.getLineItems()) {
             output.append(lineItem.getDescription());
             output.append('\t');
@@ -41,14 +41,14 @@ public class OrderReceipt {
             totalSalesTax += salesTax;
 
             // calculate total amount of lineItem = price * quantity + 10 % sales tax
-            totalAmount += lineItem.totalAmount() + salesTax;
+            totalAmountWithTax += lineItem.totalAmount() + salesTax;
         }
 
         // prints the state tax
         output.append("Sales Tax").append('\t').append(totalSalesTax);
 
         // print total amount
-        output.append("Total Amount").append('\t').append(totalAmount);
+        output.append("Total Amount").append('\t').append(totalAmountWithTax);
         return output.toString();
     }
 }
