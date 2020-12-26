@@ -12,6 +12,19 @@ public class LineItem {
         this.quantity = quantity;
     }
 
+    public String render() {
+        StringBuilder lineItemFormatString = new StringBuilder();
+        lineItemFormatString.append(getDescription());
+        lineItemFormatString.append('\t');
+        lineItemFormatString.append(getPrice());
+        lineItemFormatString.append('\t');
+        lineItemFormatString.append(getQuantity());
+        lineItemFormatString.append('\t');
+        lineItemFormatString.append(totalAmount());
+        lineItemFormatString.append('\n');
+        return lineItemFormatString.toString();
+    }
+
     public String getDescription() {
         return description;
     }
