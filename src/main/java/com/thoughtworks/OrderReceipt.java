@@ -20,8 +20,7 @@ public class OrderReceipt {
         output.append("======Printing Orders======\n");
 
         // print date, bill no, customer name
-        output.append(order.getCustomerName());
-        output.append(order.getCustomerAddress());
+        output.append(order.render());
 
         // prints lineItems
         double totalSalesTax = 0d;
